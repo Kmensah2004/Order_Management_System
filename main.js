@@ -12,12 +12,14 @@ quantityInput.addEventListener('input', calculateTotalPrice);
 // Task 3: Calculate Total Price 
 
 function calculateTotalPrice() { 
-    const productPrice = (productSelector.value);
-    const quantity = (quantityInput.value);
+    const productPrice = parseFloat(productSelector.value);
+    const quantity = parseInt(quantityInput.value);
     const totalPrice = productPrice * quantity; // based on quantity, total price will be updated
     
-    totalPriceElement.textContent = totalPrice
+    totalPriceElement.textContent = totalPrice.toFixed(2)
 }
+productSelector.addEventListener('change', updateTotalPrice);
+quantityInput.addEventListener('input', updateTotalPrice);
 
 // Task 4:Handle order submission
 placeOrderButton.addEventListener('click', function() { // button to be clicked and order to be placed
