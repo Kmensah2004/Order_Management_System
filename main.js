@@ -19,3 +19,12 @@ function calculateTotalPrice() {
     totalPriceElement.textContent = totalPrice
 }
 
+// Task 4:Handle order submission
+placeOrderButton.addEventListener('click', function() { // button to be clicked and order to be placed
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text;
+    const quantity = quantityInput.value;
+    const totalPrice = totalPriceElement.textContent;
+    
+    orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct} for a total price: $${totalPrice}`; //  displays product and total price 
+});
+
